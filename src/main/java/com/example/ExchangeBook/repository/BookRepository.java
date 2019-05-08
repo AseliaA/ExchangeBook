@@ -1,4 +1,4 @@
 package com.example.ExchangeBook.repository;
 
-public class BookRepository {
+public interface BookRepository {
 }
