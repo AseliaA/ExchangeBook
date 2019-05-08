@@ -1,4 +1,10 @@
 package com.example.ExchangeBook.enums;
 
-public class State {
+public enum State {//состояние книги
+    GOOD,//хорошее
+    NORMAL,//нормальное
+    BAD;//плохое
+
+    State() {
+    }
 }
