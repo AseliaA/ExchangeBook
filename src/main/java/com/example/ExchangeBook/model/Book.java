@@ -3,7 +3,6 @@ package com.example.ExchangeBook.model;
 
 import com.example.ExchangeBook.enums.Language;
 import com.example.ExchangeBook.enums.State;
-import lombok.Builder;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -26,7 +25,7 @@ public class Book {
     @JoinColumn(name = "user_id")
     private User user;
     private LocalDateTime dateAdded;
-    private Boolean isActive;
+    private Status status;
     private String description;
 
 
@@ -42,7 +41,7 @@ public class Book {
 
         private User user;
         private LocalDateTime dateAdded;
-        private Boolean isActive;
+        private Status status;
         private String description;
 
         public Builder(String title) {
@@ -81,8 +80,8 @@ public class Book {
             this.description = description;
             return this;
         }
-        public Builder isActive(Boolean isActive){
-            this.isActive = isActive;
+        public Builder isActive(Status status){
+            this.status = status;
             return this;
         }
         //private String title;
@@ -94,7 +93,7 @@ public class Book {
         //
         //        private User user;
         //        private LocalDateTime dateAdded;
-        //        private Boolean isActive;
+        //        private Status status;
         //        private String description;
         public Book build(){
             Book newBook = new Book();
@@ -106,7 +105,7 @@ public class Book {
             newBook.state = this.state;
             newBook.user = this.user;
             newBook.dateAdded = this.dateAdded;
-            newBook.isActive = this.isActive;
+            newBook.status = this.status;
             newBook.description = this.description;
             return newBook;
         }
@@ -140,12 +139,12 @@ public class Book {
         this.user = user;
     }
 
-    public Boolean getActive() {
-        return isActive;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setActive(Boolean active) {
-        isActive = active;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public String getDescription() {

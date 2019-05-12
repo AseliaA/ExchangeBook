@@ -15,8 +15,8 @@ public class ExchangeServiceImpl implements ExchangeService {
     private BookRepository bookRepository;
     @Override
     public Exchange startExchange(Exchange exchange) {
-        bookRepository.findById(exchange.getBook().getId()).get().setState(State.InExchange);
-        bookRepository.findById(exchange.getExchangeFor().getId()).get().setState(State.InExchange);
+        bookRepository.findById(exchange.getBook().getId()).get().setStatus(Status.);
+        bookRepository.findById(exchange.getExchangeFor().getId()).get().setStatus(Status.);
         exchangeRepository.save(exchange);
         return exchange;
     }
@@ -24,8 +24,8 @@ public class ExchangeServiceImpl implements ExchangeService {
     @Override
     public Exchange updateExchange(Exchange exchange) {
         if(exchange.getCompleted()){
-            bookRepository.findById(exchange.getBook().getId()).get().setActive(false);
-            bookRepository.findById(exchange.getExchangeFor().getId()).get().setActive(false);
+            bookRepository.findById(exchange.getBook().getId()).get().setStatus(Status.);
+            bookRepository.findById(exchange.getExchangeFor().getId()).get().setStatus(Status.);
         }
         else {
             exchangeRepository.save(exchange);
