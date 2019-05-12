@@ -26,7 +26,7 @@ public class User {
     @OneToMany
     @JoinColumn(name = "book_id")
     private List<Book>book;
-    @Column(name = "raiting")
+    @Column(name = "rating")
     private int raitingOfGenerosity;
 
     public User() {

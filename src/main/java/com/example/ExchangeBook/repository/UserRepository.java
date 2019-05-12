@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-
+@Repository
 public interface UserRepository extends JpaRepository<User,Long> {
-    @Query(value = "select from book_user order by raiting asc")
-    Integer getRaitingOfGenerosity;
+    @Query(value = "select from book_user order by rating asc")
+    Integer getRatingOfGenerosity();
 }
