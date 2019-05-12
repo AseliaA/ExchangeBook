@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ExchangeServiceImpl implements ExchangeService {
     @Autowired
-    private ExchangeRepository exchangeRepository
+    private ExchangeRepository exchangeRepository;
     @Autowired
     private BookRepository bookRepository;
     @Override
