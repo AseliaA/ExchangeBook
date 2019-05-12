@@ -1,6 +1,7 @@
 package com.example.ExchangeBook.service;
 
 import com.example.ExchangeBook.enums.State;
+import com.example.ExchangeBook.enums.Status;
 import com.example.ExchangeBook.model.Exchange;
 import com.example.ExchangeBook.repository.BookRepository;
 import com.example.ExchangeBook.repository.ExchangeRepository;
@@ -15,8 +16,8 @@ public class ExchangeServiceImpl implements ExchangeService {
     private BookRepository bookRepository;
     @Override
     public Exchange startExchange(Exchange exchange) {
-        bookRepository.findById(exchange.getBook().getId()).get().setStatus(Status.);
-        bookRepository.findById(exchange.getExchangeFor().getId()).get().setStatus(Status.);
+        bookRepository.findById(exchange.getBook().getId()).get().setStatus(Status.BOOKED);
+        bookRepository.findById(exchange.getExchangeFor().getId()).get().setStatus(Status.BOOKED);
         exchangeRepository.save(exchange);
         return exchange;
     }
@@ -24,8 +25,8 @@ public class ExchangeServiceImpl implements ExchangeService {
     @Override
     public Exchange updateExchange(Exchange exchange) {
         if(exchange.getCompleted()){
-            bookRepository.findById(exchange.getBook().getId()).get().setStatus(Status.);
-            bookRepository.findById(exchange.getExchangeFor().getId()).get().setStatus(Status.);
+            bookRepository.findById(exchange.getBook().getId()).get().setStatus(Status.EXCHANGED);
+            bookRepository.findById(exchange.getExchangeFor().getId()).get().setStatus(Status.EXCHANGED);
         }
         else {
             exchangeRepository.save(exchange);

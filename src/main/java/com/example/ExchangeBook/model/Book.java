@@ -3,6 +3,7 @@ package com.example.ExchangeBook.model;
 
 import com.example.ExchangeBook.enums.Language;
 import com.example.ExchangeBook.enums.State;
+import com.example.ExchangeBook.enums.Status;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
