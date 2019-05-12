@@ -39,4 +39,5 @@ public class User {
         this.isActive = isActive;
         this.phoneNumber = phoneNumber;
     }
+
 }
