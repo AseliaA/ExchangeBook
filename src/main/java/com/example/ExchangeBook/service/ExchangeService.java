@@ -10,4 +10,5 @@ public interface ExchangeService {
     Exchange getExchangeById(Long id);
     List<Exchange> getAllExchanges();
     void deleteExchange(Long id);
+    Exchange confirmExchange(Long exchangeId, Integer confirmationCode, Long confirmingUserId);
 }
