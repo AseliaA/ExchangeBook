@@ -1,4 +1,7 @@
 package com.example.ExchangeBook.repository;
 
-public class BookRepository {
+import com.example.ExchangeBook.model.Book;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookRepository extends JpaRepository<Book, Long> {
 }
