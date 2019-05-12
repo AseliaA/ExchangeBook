@@ -1,24 +1,29 @@
 package com.example.ExchangeBook.service;
 
-import com.example.ExchangeBook.enums.State;
+import com.example.ExchangeBook.enums.Language;
 import com.example.ExchangeBook.model.Book;
-import com.example.ExchangeBook.model.Exchange;
-import com.example.ExchangeBook.model.User;
-import com.example.ExchangeBook.repository.BookRepository;
-import com.example.ExchangeBook.repository.ExchangeRepository;
-import com.example.ExchangeBook.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
-public class BookService {
-    @Autowired
-    private BookRepository bookRepository;
-    @Autowired
-    private ExchangeRepository exchangeRepository;
-    @Autowired
-    private UserRepository userRepository;
+import java.util.List;
 
-
+public interface BookService {
+    //URL для класса Book
+    //1) Post - sprint/exchangeBook/Book/addBook
+    //2) Get - sprint/exchangeBook/Book/getBookById
+    //3) GetAll - sprint/exchangeBook/Book/getAllBooks
+    //4) Delete - sprint/exchangeBook/Book/deleteBookById
+    //5) DeleteAll- sprint/exchangeBook/Book/deleteAllBooks
+    //6) GetBookByName - sprint/exchangeBook/Book/getBookByName
+    //7) GetAllBooksByUserId- sprint/exchangeBook/Book/getAllBooksByUserId
+    Book addBook(Book book);
+    Book getBookById(Long id);
+    List<Book> getAllBooks();
+    void deleteBook(Long id);
+    void deleteAllBooks();
+    List<Book> getBooksByTitle(String title);
+    List<Book> getBooksByUserId(Long id);
+    List<Book> getBooksByLanguage(Language language);
+    List<Book> getBooksByAuthor(String author);
+    List<Book> getBooksByYear(int year);
+    List<Book> getBooksByPeriod(int year1, int year2);
 
 }

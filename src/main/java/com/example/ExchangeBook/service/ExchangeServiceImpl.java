@@ -6,14 +6,17 @@ import com.example.ExchangeBook.model.Exchange;
 import com.example.ExchangeBook.repository.BookRepository;
 import com.example.ExchangeBook.repository.ExchangeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ExchangeServiceImpl implements ExchangeService {
     @Autowired
     private ExchangeRepository exchangeRepository;
     @Autowired
     private BookRepository bookRepository;
+
     @Override
     public Exchange startExchange(Exchange exchange) {
         bookRepository.findById(exchange.getBook().getId()).get().setStatus(Status.BOOKED);
