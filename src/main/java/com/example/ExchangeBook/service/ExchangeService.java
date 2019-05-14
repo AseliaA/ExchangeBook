@@ -1,5 +1,6 @@
 package com.example.ExchangeBook.service;
 
+import com.example.ExchangeBook.model.Confirmation;
 import com.example.ExchangeBook.model.Exchange;
 
 import java.util.List;
@@ -10,5 +11,5 @@ public interface ExchangeService {
     Exchange getExchangeById(Long id);
     List<Exchange> getAllExchanges();
     void deleteExchange(Long id);
-    Exchange confirmExchange(Long exchangeId, Integer confirmationCode, Long confirmingUserId);
+    Exchange confirmExchange(Confirmation confirmation);
 }

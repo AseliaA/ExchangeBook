@@ -2,6 +2,7 @@ package com.example.ExchangeBook.service;
 
 import com.example.ExchangeBook.enums.State;
 import com.example.ExchangeBook.enums.Status;
+import com.example.ExchangeBook.model.Confirmation;
 import com.example.ExchangeBook.model.Exchange;
 import com.example.ExchangeBook.repository.BookRepository;
 import com.example.ExchangeBook.repository.ExchangeRepository;
@@ -42,7 +43,10 @@ public class ExchangeServiceImpl implements ExchangeService {
     }
 
     @Override
-    public Exchange confirmExchange(Long exchangeId, Integer confirmationCode, Long confirmingUserId) {
+    public Exchange confirmExchange(Confirmation confirmation) {
+        Long exchangeId = confirmation.getExchangeId();
+        Long confirmingUserId = confirmation.getConfirmtingUserId();
+        int confirmationCode = confirmation.getConfirmationCode();
         Exchange exchange = exchangeRepository.findById(exchangeId).get();
         if(userRepository.findById(confirmingUserId).equals(exchange.getUser())){
             if(exchangeRepository.findById(exchangeId).get().getFirstUserConfirmation().equals(confirmationCode)){
