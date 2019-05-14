@@ -18,22 +18,22 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/sprint/exchangeBook/User/getUserById")//возвращает одного пользователя по id
+    @GetMapping("/getUserById")//возвращает одного пользователя по id
     public User getOneUser(@PathVariable Long getUserById) {
         return this.userService.getUserById(getUserById);
     }
 
-    @DeleteMapping("/sprint/exchangeBook/User/deleteUserById")//удаляет одного пользователя по id
+    @DeleteMapping("/deleteUserById")//удаляет одного пользователя по id
     public void deleteOneUser(@PathVariable Long deleteUserById) {
         this.userService.deleteUserById(deleteUserById);
     }
 
-    @PostMapping("/sprint/exchangeBook/User/addUser")
+    @PostMapping("/addUser")
     public User createUser(@RequestBody User addUser) {
         return this.userService.addUser(addUser);
     }
 
-    @GetMapping(" /sprint/exchangeBook/User/getAllUsers")
+    @GetMapping("/getAllUsers")
     public List<User> getAllUsers() {
         return this.userService.getAllUser();
     }
