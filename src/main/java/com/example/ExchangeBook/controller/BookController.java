@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("sprint/exchangeBook/Book")
+@RequestMapping("sprint/exchangeBook/Book/")
 //URL для класса Book
 //1) Post - sprint/exchangeBook/Book/addBook
 //2) Get - sprint/exchangeBook/Book/getBookById

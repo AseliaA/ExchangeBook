@@ -38,9 +38,9 @@ public class MainBootstrap implements CommandLineRunner {
 //                passwordEncoder.encode("123"), 1);
 //        userRepository.save(user3);
         //String name, String login, String password, int isActive, String phoneNumber, int ratingOfGenerosity)
-        User user1  = new User("Shabdan","shaba","123",1,"996550523209",1233);
+        User user1  = new User("Shabdan","shaba",passwordEncoder.encode("123"),1,"996550523209",1233);
         userRepository.save(user1);
-        UserRoles userRoles1 = new UserRoles("ROLE_ADMIN", user1);
+        UserRoles userRoles1 = new UserRoles("ROLE_USER", user1);
         userRolesRepository.save(userRoles1);
 
 //        UserRoles userRoles2 = new UserRoles("ROLE_USER", user2);
