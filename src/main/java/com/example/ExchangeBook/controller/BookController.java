@@ -1,5 +1,6 @@
 package com.example.ExchangeBook.controller;
 
+<<<<<<< HEAD
 import com.example.ExchangeBook.enums.Language;
 import com.example.ExchangeBook.model.Book;
 import com.example.ExchangeBook.service.BookService;
@@ -83,4 +84,11 @@ public class BookController {
     public List<Book> getBooksByYear(@PathVariable int year){
         return bookService.getBooksByYear(year);
     }
+=======
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class BookController {
+
+>>>>>>> Authorization
 }
