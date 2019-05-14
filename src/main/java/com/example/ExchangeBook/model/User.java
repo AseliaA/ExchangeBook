@@ -29,12 +29,12 @@ public class User {
     public User() {
     }
 
-    public User(String name, String login, String password, int isActive, String phoneNumber) {
+    public User(String name, String login, String password, int isActive, String phoneNumber, int ratingOfGenerosity) {
         this.name = name;
         this.login = login;
         this.password = password;
         this.isActive = isActive;
         this.phoneNumber = phoneNumber;
+        this.ratingOfGenerosity = ratingOfGenerosity;
     }
-
 }
