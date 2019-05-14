@@ -196,14 +196,6 @@ public class Book {
         this.year = year;
     }
 
-    public User getOwner() {
-        return user;
-    }
-
-    public void setOwner(User owner) {
-        this.user = owner;
-    }
-
     public LocalDateTime getDateAdded() {
         return dateAdded;
     }

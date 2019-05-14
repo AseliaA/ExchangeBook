@@ -20,6 +20,10 @@ public class Exchange {
     private Book exchangeFor;//Belongs to the one who created this process
     private LocalDateTime timeCreated;
     private Boolean isCompleted;
+    private Integer firstUserConfirmation;
+    private Integer secondUserConfirmation;
+    private Boolean firstUserConfirmed;
+    private Boolean secondUserConfirmed;
 
     public Exchange() {
     }
@@ -30,6 +34,38 @@ public class Exchange {
         this.exchangeFor = exchangeFor;
         this.timeCreated = LocalDateTime.now();
         this.isCompleted = isCompleted;
+    }
+
+    public Boolean getFirstUserConfirmed() {
+        return firstUserConfirmed;
+    }
+
+    public void setFirstUserConfirmed(Boolean firstUserConfirmed) {
+        this.firstUserConfirmed = firstUserConfirmed;
+    }
+
+    public Boolean getSecondUserConfirmed() {
+        return secondUserConfirmed;
+    }
+
+    public void setSecondUserConfirmed(Boolean secondUserConfirmed) {
+        this.secondUserConfirmed = secondUserConfirmed;
+    }
+
+    public Integer getFirstUserConfirmation() {
+        return firstUserConfirmation;
+    }
+
+    public void setFirstUserConfirmation(Integer firstUserConfirmation) {
+        this.firstUserConfirmation = firstUserConfirmation;
+    }
+
+    public Integer getSecondUserConfirmation() {
+        return secondUserConfirmation;
+    }
+
+    public void setSecondUserConfirmation(Integer secondUserConfirmation) {
+        this.secondUserConfirmation = secondUserConfirmation;
     }
 
     public Long getId() {
