@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.example.ExchangeBook.service;
 
 import com.example.ExchangeBook.enums.Language;
@@ -28,9 +27,4 @@ public interface BookService {
     List<Book> getBooksByPeriod(int year1, int year2);
 
 }
-=======
-//package com.example.ExchangeBook.service;
-//
-//public class BookService {
-//}
->>>>>>> Authorization
+
