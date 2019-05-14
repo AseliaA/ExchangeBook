@@ -23,9 +23,6 @@ public class User {
     private int isActive;
     @Column(name = "phone_number",nullable = false)
     private String phoneNumber;
-    @OneToMany
-    @JoinColumn(name = "book_id")
-    private List<Book>book;
     @Column(name = "rating")
     private int ratingOfGenerosity;
 

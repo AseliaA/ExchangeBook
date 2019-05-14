@@ -9,8 +9,14 @@ public class Exchange {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;//Creates exchange process
+    @ManyToOne
+    @JoinColumn(name = "book_id")
     private Book book;//User above wants this book
+    @ManyToOne
+    @JoinColumn(name = "book_id_ex")
     private Book exchangeFor;//Belongs to the one who created this process
     private LocalDateTime timeCreated;
     private Boolean isCompleted;

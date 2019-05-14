@@ -14,6 +14,6 @@ public interface UserRepository extends JpaRepository<User,Long> {
     @Query(value = "select u from User u order by u.ratingOfGenerosity asc")
     List<User> getRatingOfGenerosity();
 
-    @Query(value = "select u.book from User u where u.id = :userId")
-    List<Book>getBook(@Param(":userId")Long UserId);
+//    @Query(value = "select u.book from User u where u.id = :userId")
+//    List<Book>getBook(@Param(":userId")Long UserId);
 }

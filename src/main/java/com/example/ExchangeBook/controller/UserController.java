@@ -38,9 +38,9 @@ public class UserController {
         return this.userService.getAllUser();
     }
 
-    @GetMapping("/sprint/exchangeBook/User/getUsersAllBooks")
-    public List<Book> getAllUsersBook(@PathVariable Long getUsersAllBooks) {
-        return this.userRepository.getBook(getUsersAllBooks);
-    }
+  //  @GetMapping("/sprint/exchangeBook/User/getUsersAllBooks")
+//    public List<Book> getAllUsersBook(@PathVariable Long getUsersAllBooks) {
+//        return this.userRepository.getBook(getUsersAllBooks);
+//    }
 
 }
