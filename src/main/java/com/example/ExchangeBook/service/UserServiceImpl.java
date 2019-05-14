@@ -38,4 +38,12 @@ public class UserServiceImpl implements UserService {
 //    }
 
 
+    public List<User> getTop100(){
+        return userRepository.getRatingOfGenerosity();
+    }
+    public List<Book>getBook(Long UserId){
+        return this.userRepository.getBook(UserId);
+    }
+
+
 }

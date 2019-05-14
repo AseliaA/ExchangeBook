@@ -11,9 +11,9 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
-    @Query(value = "select from book_user order by rating asc")
-    Integer getRatingOfGenerosity();
+    @Query(value = "select u from User u order by u.ratingOfGenerosity asc")
+    List<User> getRatingOfGenerosity();
 
-    @Query(value = "select b book_5 from book_user u where u.id = :userId")
+    @Query(value = "select u.book from User u where u.id = :userId")
     List<Book>getBook(@Param(":userId")Long UserId);
 }

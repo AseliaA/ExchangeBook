@@ -27,7 +27,7 @@ public class User {
     @JoinColumn(name = "book_id")
     private List<Book>book;
     @Column(name = "rating")
-    private int raitingOfGenerosity;
+    private int ratingOfGenerosity;
 
     public User() {
     }
