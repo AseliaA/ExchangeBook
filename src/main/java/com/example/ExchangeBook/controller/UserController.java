@@ -12,13 +12,13 @@ import java.util.List;
 @RestController
 @RequestMapping(UserController.URL_USER)
 public class UserController {
-    public static final String URL_USER = "/sprint/exchangeBook/User";
+    public static final String URL_USER = "/sprint/exchangeBook/User/";
     @Autowired
     private UserService userService;
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/getUserById")//возвращает одного пользователя по id
+    @GetMapping("/getUserById/{id}")//возвращает одного пользователя по id
     public User getOneUser(@PathVariable Long getUserById) {
         return this.userService.getUserById(getUserById);
     }

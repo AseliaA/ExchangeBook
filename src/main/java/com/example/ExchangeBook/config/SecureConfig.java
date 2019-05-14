@@ -35,7 +35,7 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
                         "/sprint/exchangeBook/Book/addBook",
                         "/sprint/exchangeBook/Book/deleteBookById"
                         ).access("hasRole('USER')")
-                .antMatchers("/sprint/exchangeBook/Book/getAllBooks",
+                /*.antMatchers("/sprint/exchangeBook/Book/getAllBooks",
                         "/sprint/exchangeBook/Book/getBookById",
                         "/sprint/exchangeBook/Book/getAllBooksByUserId",
                         "/sprint/exchangeBook/Book/getBookByName",
@@ -47,7 +47,7 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
                         "/sprint/exchangeBook/Book/addBook",
                         "/sprint/exchangeBook/Book/deleteBookById",
                         "/sprint/exchangeBook/Book/deleteAllBooks",
-                        "/sprint/exchangeBook/User/deleteAllUsers").access("hasRole('ADMIN')")
+                        "/sprint/exchangeBook/User/deleteAllUsers").access("hasRole('ADMIN')")*/
                 .and()
                 .httpBasic()
                 .and()
@@ -60,10 +60,10 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
                 .usersByUsernameQuery("select login, password, " +
-                        "is_active from book_user where login = ?")
+                        "is_active from t_user where login = ?")
                 .authoritiesByUsernameQuery("select u.login, " +
                         "ur.role as role " +
-                        "from book_user u inner join book_user_roles ur on u.id = ur.user_id " +
+                        "from t_user u inner join t_user_roles ur on u.id = ur.user_id " +
                         "where u.login = ?");
 
     }
